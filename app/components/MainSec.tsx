@@ -1,5 +1,6 @@
 import React from "react";
 import { MainSecData } from "../config/StaticData";
+import SectionHeader from "./SectionHeader";
 
 const MainSec = () => {
   return (
@@ -17,16 +18,7 @@ const MainSec = () => {
 
       <div className="relative mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Section Header - Retro Terminal Style */}
-        <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center space-x-3">
-            <div className="h-[1px] w-8 bg-teal-400" />
-            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.4em] text-teal-300 drop-shadow-[0_0_8px_rgba(0,255,255,0.6)] sm:text-sm">
-              FEATURED POSTS
-            </h2>
-            <div className="h-[1px] w-8 bg-teal-400" />
-          </div>
-          <div className="mx-auto h-px w-32 bg-gradient-to-r from-transparent via-teal-400 to-transparent opacity-60" />
-        </div>
+        <SectionHeader title="FEATURED POSTS"/>
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
