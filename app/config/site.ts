@@ -16,6 +16,11 @@ const SiteConfig = {
       name : "Archive",
       href : "/archive"
     },
+    {
+      id : 3 ,
+      name : "About",
+      href : "/about"
+    },
   ]
 };
 
