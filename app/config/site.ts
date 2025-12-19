@@ -1,6 +1,6 @@
 
 const SiteConfig = {
-  name: "siteName",
+  name: "Retro-blog",
   description: "Description",
   keywords: "key1 , key2 , key3",
   lang: "en",
