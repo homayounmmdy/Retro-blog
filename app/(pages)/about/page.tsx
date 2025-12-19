@@ -38,7 +38,7 @@ const AboutPage = () => {
             <p>
               Every pixel is calibrated to evoke the glow of a CRT monitor, the
               hum of analog circuits, and the quiet confidence of a
-              well-architected system. It’s not just a blog—it’s a{" "}
+              well-architected system. It’s not just a blog—it&quot;s a{" "}
               <span className="text-teal-300">
                 time capsule from the future
               </span>
@@ -72,8 +72,8 @@ const AboutPage = () => {
           {/* Author Note */}
           <div className="mt-10 rounded-lg border border-teal-400/20 bg-gray-900/70 p-4 backdrop-blur-sm">
             <p className="font-mono text-sm italic text-gray-400">
-              "This system is not connected to live data. All content is
-              static—preserved for reference and inspiration."
+              &quot;This system is not connected to live data. All content is
+              static—preserved for reference and inspiration.&quot;
             </p>
             <p className="mt-2 font-mono text-xs text-teal-400">
               — ARCHIVE MODE ACTIVE

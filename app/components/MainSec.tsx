@@ -1,6 +1,7 @@
 import React from "react";
 import { MainSecData } from "../config/StaticData";
 import SectionHeader from "./SectionHeader";
+import Image from "next/image";
 
 const MainSec = () => {
   return (
@@ -50,7 +51,7 @@ const MainSec = () => {
                       {/* CRT Scanlines Over Image */}
                       <div className="absolute inset-0 z-10 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.1)_1px,transparent_2px,transparent_3px,rgba(0,255,255,0.05)_4px)] opacity-60" />
                       
-                      <img
+                      <Image
                         src={data.imgurl}
                         alt={data.title}
                         className="contrast-110 h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105"
