@@ -44,7 +44,7 @@ export interface Comment {
   author: string;
   avatar: string;
   content: string;
-  timestamp: string; 
+  timestamp: string;
 }
 
 const StaticData = {
@@ -167,32 +167,47 @@ const StaticData = {
     readTime: "5 min read",
     date: "Jun 14, 2025",
     author: "Homayoun M.",
-    authorImg: "/avatar/homayoun.webp", 
-    authorBio: "Futurist, developer, and digital policy observer. Writes about tech ethics, AI, and sustainable innovation.",
-  } ,
+    authorImg: "/avatar/homayoun.webp",
+    authorBio:
+      "Futurist, developer, and digital policy observer. Writes about tech ethics, AI, and sustainable innovation.",
+  },
   comments: [
     {
       id: 1,
       author: "Alex R.",
       avatar: "/avatar/1.webp",
-      content: "This is a monumental step toward ethical AI. The burden-of-proof shift is genius.",
+      content:
+        "This is a monumental step toward ethical AI. The burden-of-proof shift is genius.",
       timestamp: "3 hours ago",
     },
     {
       id: 2,
       author: "Dr. Lena K.",
       avatar: "/avatar/2.webp",
-      content: "As an AI researcher, I welcome accountability—but implementation will be tricky.",
+      content:
+        "As an AI researcher, I welcome accountability—but implementation will be tricky.",
       timestamp: "5 hours ago",
     },
     {
       id: 3,
       author: "M. Chen",
       avatar: "/avatar/3.webp",
-      content: "Will this apply to open-source models too? The line between developer and user is blurry.",
+      content:
+        "Will this apply to open-source models too? The line between developer and user is blurry.",
       timestamp: "1 day ago",
     },
   ] satisfies Comment[],
+  authorProfile: {
+    name: "Homayoun M.",
+    avatar: "/avatar/homayoun.webp",
+    age: 20,
+    bio: "Futurist developer passionate about ethical AI, sustainable tech, and retro-futurist design. Building tools that bridge nostalgia and tomorrow.",
+    location: "Earth, Sol System",
+    email: "homayoun763@gmail.com",
+    website: "https://homayounmmdy.vercel.app/",
+    github: "homayounmmdy",
+    linkedin: "homayounmmdy",
+  },
 };
 
 export default StaticData;

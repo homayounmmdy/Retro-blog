@@ -37,7 +37,7 @@ const PostPage = () => {
           </div>
 
           {/* 👇 Author Post Info Section */}
-          <div className="mb-8 flex flex-col items-center rounded-lg border border-teal-400/20 bg-gray-900/70 p-5 backdrop-blur-sm sm:flex-row sm:items-start">
+          <Link href="/post/1/author" className="mb-8 flex flex-col items-center rounded-lg border border-teal-400/20 bg-gray-900/70 p-5 backdrop-blur-sm sm:flex-row sm:items-start">
             <div className="relative mb-4 h-16 w-16 overflow-hidden rounded-full border-2 border-teal-400/40 sm:mb-0 sm:mr-5">
               <Image
                 src={data.authorImg}
@@ -57,7 +57,7 @@ const PostPage = () => {
                 <p className="mt-2 font-mono text-[13px] italic text-gray-300">{data.authorBio}</p>
               )}
             </div>
-          </div>
+          </Link>
 
           {/* Post Body - Terminal Log Style */}
           <div className="mb-10 px-2 font-mono text-[15px] leading-relaxed text-gray-300">
