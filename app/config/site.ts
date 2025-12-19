@@ -18,11 +18,16 @@ const SiteConfig = {
     },
     {
       id : 3 ,
+      name : "Contact",
+      href : "/contact"
+    },
+    {
+      id : 4 ,
       name : "About",
       href : "/about"
     },
     {
-      id : 4 ,
+      id : 5 ,
       name : "Privacy Policy",
       href : "/privacy-policy"
     },
