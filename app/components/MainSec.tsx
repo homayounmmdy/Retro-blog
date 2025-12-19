@@ -54,6 +54,8 @@ const MainSec = () => {
                       <Image
                         src={data.imgurl}
                         alt={data.title}
+                        width={586}
+                        height={329}
                         className="contrast-110 h-full w-full object-cover brightness-90 transition-transform duration-500 group-hover:scale-105"
                       />
                       

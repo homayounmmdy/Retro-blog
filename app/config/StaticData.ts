@@ -167,8 +167,9 @@ const StaticData = {
     readTime: "5 min read",
     date: "Jun 14, 2025",
     author: "Homayoun M.",
-  },
-  // 👇 Add static comments
+    authorImg: "/avatar/homayoun.webp", 
+    authorBio: "Futurist, developer, and digital policy observer. Writes about tech ethics, AI, and sustainable innovation.",
+  } ,
   comments: [
     {
       id: 1,
