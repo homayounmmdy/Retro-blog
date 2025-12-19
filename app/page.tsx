@@ -1,6 +1,7 @@
 import React from "react";
 import MainSec from "./components/MainSec";
 import OthersSections from "./components/OthersSections";
+import GridSection from "./components/GridSection";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         {/* Centered max-width container */}
         <div className="mx-auto max-w-7xl">
           <MainSec />
+          <GridSection />
           <OthersSections />
         </div>
       </main>
