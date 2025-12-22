@@ -125,7 +125,7 @@ const AuthorPage = () => {
               {allPosts.map((post) => (
                 <Link
                   key={post.id}
-                  href={post.id === 0 ? "/" : `/posts/${post.id}`} // adjust routing as needed
+                  href="/post/1"
                   className="group block rounded border border-teal-400/10 bg-gray-900/60 p-4 transition-all hover:border-teal-400/30 hover:bg-gray-900/80"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center">
