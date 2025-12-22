@@ -47,6 +47,20 @@ export interface Comment {
   timestamp: string;
 }
 
+export interface PostMetrics {
+  views: number;
+  avgReadTime: number; // in seconds
+  completionRate: number; // percentage (0–100)
+  shares: number;
+  likes: number;
+  deviceBreakdown: {
+    desktop: number;
+    mobile: number;
+    tablet: number;
+  };
+  hourlyViews: number[]; // 24-hour window (simplified)
+}
+
 const StaticData = {
   others: [
     {
@@ -170,6 +184,22 @@ const StaticData = {
     authorImg: "/avatar/homayoun.webp",
     authorBio:
       "Futurist, developer, and digital policy observer. Writes about tech ethics, AI, and sustainable innovation.",
+    metrics: {
+      views: 4281,
+      avgReadTime: 295, // ~4.9 min
+      completionRate: 78,
+      shares: 142,
+      likes: 320,
+      deviceBreakdown: {
+        desktop: 58,
+        mobile: 36,
+        tablet: 6,
+      },
+      hourlyViews: [
+        20, 25, 18, 12, 8, 10, 30, 65, 120, 180, 210, 240, 230, 210, 190, 170,
+        150, 130, 110, 90, 70, 50, 35, 28,
+      ],
+    } satisfies PostMetrics,
   },
   comments: [
     {
