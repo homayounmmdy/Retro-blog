@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaBars, FaTimes } from "react-icons/fa";
 import SiteConfig from "../config/site";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +81,7 @@ const Navbar = () => {
         >
           <div className="space-y-1 border-t border-teal-400/20 bg-gray-950/95 px-4 pb-4 pt-3">
             {SiteConfig.nav.map((nav, index) => (
-              <a
+              <Link
                 key={nav.id}
                 href={nav.href}
                 className="group relative block font-mono text-[13px] uppercase tracking-wide text-gray-400"
@@ -90,7 +91,7 @@ const Navbar = () => {
                   <span>{nav.name}</span>
                   <span className="text-teal-400/70">[{String(index + 1).padStart(2, '0')}]</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteConfig from "./config/site";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Banner from "./components/Banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="light">
     <body className={`${inter.className} bg-base-100`}>
+      <Banner />
       <Navbar />
       {children}
       <Footer />

@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import SiteConfig from "../config/site";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -64,7 +65,7 @@ const Footer = () => {
                   { icon: FaInstagram, href: "/", label: "Instagram" },
                   { icon: FaXTwitter, href: "/", label: "Twitter" },
                 ].map((social, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={social.href}
                     aria-label={social.label}
@@ -73,7 +74,7 @@ const Footer = () => {
                     <div className="relative flex h-9 w-9 items-center justify-center rounded-sm border border-teal-400/50 bg-gray-900 transition-all hover:border-teal-300">
                       <social.icon className="h-4 w-4 text-teal-400 transition-colors group-hover:text-teal-300" />
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
