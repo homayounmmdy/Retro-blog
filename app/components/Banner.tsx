@@ -41,7 +41,7 @@ const Banner: React.FC = () => {
       {/* Glowing edge */}
       <div className="absolute inset-0 animate-pulse rounded-lg opacity-0 shadow-[0_0_12px_rgba(0,255,255,0.2)]" />
 
-      <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative flex w-full items-center justify-between gap-3 sm:flex-row">
         <div className="flex items-start sm:items-center">
           <div className="mr-3 flex h-5 w-5 items-center justify-center rounded-full border border-teal-400/30 bg-teal-400/20 text-[10px] text-teal-300">
             !
@@ -63,7 +63,7 @@ const Banner: React.FC = () => {
         </button>
       </div>
 
-      <p className="mt-2 font-mono text-[10px] italic text-gray-500">Access all pages in the Retro Blog system.</p>
+      <p className="mt-2 hidden font-mono text-[10px] italic text-gray-500 md:block">Access all pages in the Retro Blog system.</p>
     </div>
   );
 };
