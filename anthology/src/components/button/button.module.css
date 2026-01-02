@@ -1,0 +1,94 @@
+.button {
+  @apply bg-primary-600 inline-flex cursor-pointer items-center gap-1.5 rounded border border-transparent px-2.5 py-1.5 text-white shadow-sm transition-colors;
+}
+
+/* Focus visible styles */
+.button:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/* Disabled styles */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: #9967d5;
+}
+
+.button:active {
+  background-color: #bc9be5;
+}
+
+/* Variant: secondary */
+.secondary {
+  background-color: white;
+  color: #343a46;
+  border-color: #b1bbc8;
+}
+
+.secondary:hover {
+  background-color: #f6f7f9;
+}
+
+.secondary:active {
+  background-color: #eceef2;
+}
+
+/* Variant: destructive */
+.destructive {
+  background-color: #d9253e;
+  color: white;
+  border-color: transparent;
+}
+
+.destructive:hover {
+  background-color: #ed4656;
+}
+
+.destructive:active {
+  background-color: #f6767f;
+}
+
+/* Variant: ghost */
+.ghost {
+  background-color: transparent;
+  color: #343a46;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.ghost:hover {
+  background-color: #f6f7f9;
+}
+
+.ghost:active {
+  background-color: #eceef2;
+}
+
+/* Sizes */
+.small {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.medium {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.625rem;
+}
+
+.large {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Icon positions */
+.icon-left {
+  flex-direction: row;
+}
+
+.icon-right {
+  flex-direction: row-reverse;
+}
