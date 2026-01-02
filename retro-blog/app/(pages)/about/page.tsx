@@ -1,4 +1,5 @@
 // app/about/page.tsx
+import Badge from "@/app/components/Badge";
 import Link from "next/link";
 
 const AboutPage = () => {
@@ -82,12 +83,9 @@ const AboutPage = () => {
 
           {/* System Status Bar */}
           <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center space-x-2 rounded-sm border border-teal-400/30 bg-gray-900/80 px-4 py-2">
-              <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
-              <span className="font-mono text-[12px] uppercase tracking-wider text-gray-300">
+            <Badge active>
                 PROFILE LOADED
-              </span>
-            </div>
+            </Badge>
           </div>
 
           {/* Back to Home - Retro Control Button */}
