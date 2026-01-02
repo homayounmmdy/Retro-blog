@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import StaticData from "@/app/config/StaticData";
 import VerticalCard from "@/app/components/VerticalCard";
+import StaticData from "@/app/config/StaticData";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import Badge from "./Badge";
 
 export default function ArchiveContent() {
   const searchParams = useSearchParams(); // ✅ Now inside Suspense
@@ -78,12 +79,9 @@ export default function ArchiveContent() {
           )}
 
           <div className="mt-12 flex justify-center">
-            <div className="inline-flex items-center space-x-2 rounded-sm border border-teal-400/30 bg-gray-900/80 px-4 py-2">
-              <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
-              <span className="font-mono text-[12px] uppercase tracking-wider text-gray-300">
-                ARCHIVE ONLINE
-              </span>
-            </div>
+            <Badge size="sm" status="active" variant="secondary">
+              ARCHIVE ONLINE
+            </Badge>
           </div>
         </div>
       </main>

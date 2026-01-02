@@ -18,7 +18,9 @@ const Navbar = () => {
           <div className="flex h-16 items-center justify-between">
             {/* Logo - Retro Terminal Badge */}
             <a href="/" className="group relative">
-              <Badge active>{SiteConfig.name}</Badge>
+              <Badge font="bold" status="active">
+                {SiteConfig.name}
+              </Badge>
             </a>
 
             {/* Desktop Navigation */}

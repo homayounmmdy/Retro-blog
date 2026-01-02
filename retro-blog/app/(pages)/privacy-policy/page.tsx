@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import Badge from "@/app/components/Badge";
+import Link from "next/link";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -22,51 +22,84 @@ const PrivacyPolicyPage = () => {
           {/* Intro */}
           <div className="mb-8 font-mono text-[15px] leading-relaxed text-gray-300">
             <p>
-              This system operates in <span className="text-teal-300">ARCHIVE MODE</span>. No user data is collected, stored, or transmitted. The following policy is provided as a standard template for developers deploying this Retro Blog template.
+              This system operates in{" "}
+              <span className="text-teal-300">ARCHIVE MODE</span>. No user data
+              is collected, stored, or transmitted. The following policy is
+              provided as a standard template for developers deploying this
+              Retro Blog template.
             </p>
           </div>
 
           {/* Policy Sections */}
           <div className="space-y-6 font-mono text-[15px] leading-relaxed text-gray-300">
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">1. Data Collection</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                1. Data Collection
+              </h2>
               <p>
-                This template does not include analytics, cookies, or tracking scripts by default. If deployed as-is, <span className="text-teal-300">zero personal data</span> is collected from visitors.
+                This template does not include analytics, cookies, or tracking
+                scripts by default. If deployed as-is,{" "}
+                <span className="text-teal-300">zero personal data</span> is
+                collected from visitors.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">2. Third-Party Services</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                2. Third-Party Services
+              </h2>
               <p>
-                If you integrate third-party services (e.g., comments, analytics, ads), those services may collect data under their own policies. Review their terms before integration.
+                If you integrate third-party services (e.g., comments,
+                analytics, ads), those services may collect data under their own
+                policies. Review their terms before integration.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">3. Comments & User Input</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                3. Comments & User Input
+              </h2>
               <p>
-                The comment section in this template is <span className="text-teal-300">static and non-interactive</span>. No input fields are functional unless you add a backend. Any future comment system must comply with local data laws (e.g., GDPR, CCPA).
+                The comment section in this template is{" "}
+                <span className="text-teal-300">
+                  static and non-interactive
+                </span>
+                . No input fields are functional unless you add a backend. Any
+                future comment system must comply with local data laws (e.g.,
+                GDPR, CCPA).
               </p>
             </section>
 
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">4. Cookies</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                4. Cookies
+              </h2>
               <p>
-                This template does not set cookies. If you add authentication, preferences, or tracking, you must implement cookie consent mechanisms as required by law.
+                This template does not set cookies. If you add authentication,
+                preferences, or tracking, you must implement cookie consent
+                mechanisms as required by law.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">5. Data Retention</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                5. Data Retention
+              </h2>
               <p>
-                No data = no retention. If you extend this template with user accounts or forms, define clear retention policies and secure deletion procedures.
+                No data = no retention. If you extend this template with user
+                accounts or forms, define clear retention policies and secure
+                deletion procedures.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-2 font-bold uppercase text-teal-300">6. Policy Updates</h2>
+              <h2 className="mb-2 font-bold uppercase text-teal-300">
+                6. Policy Updates
+              </h2>
               <p>
-                As this is a static template, this policy does not auto-update. Developers are responsible for maintaining compliance in their deployed versions.
+                As this is a static template, this policy does not auto-update.
+                Developers are responsible for maintaining compliance in their
+                deployed versions.
               </p>
             </section>
           </div>
@@ -74,20 +107,19 @@ const PrivacyPolicyPage = () => {
           {/* Disclaimer */}
           <div className="mt-10 rounded-lg border border-teal-400/20 bg-gray-900/70 p-4 backdrop-blur-sm">
             <p className="font-mono text-sm italic text-gray-400">
-              ⚠️ This is a generic privacy policy for demonstration purposes only.  
-              Consult a legal professional before deploying in production.
+              ⚠️ This is a generic privacy policy for demonstration purposes
+              only. Consult a legal professional before deploying in production.
             </p>
-            <p className="mt-2 font-mono text-xs text-teal-400">— NOT A LEGAL DOCUMENT</p>
+            <p className="mt-2 font-mono text-xs text-teal-400">
+              — NOT A LEGAL DOCUMENT
+            </p>
           </div>
 
           {/* System Status Bar */}
           <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center space-x-2 rounded-sm border border-teal-400/30 bg-gray-900/80 px-4 py-2">
-              <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
-              <span className="font-mono text-[12px] uppercase tracking-wider text-gray-300">
-                POLICY LOADED
-              </span>
-            </div>
+            <Badge status="active" variant="secondary" size="sm">
+              POLICY LOADED
+            </Badge>
           </div>
 
           {/* Back to Home - Retro Control Button */}

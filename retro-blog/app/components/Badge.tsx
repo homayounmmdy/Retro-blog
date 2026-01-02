@@ -1,18 +1,25 @@
-import { BadgeVariants, variants } from "./Bage-variant";
+import { BadgeVariants, STATUS_COLOR_MAP, variants } from "./Badge-variant";
 
 type BadgeProps = BadgeVariants & {
   children: React.ReactNode;
-  active?: boolean;
 };
 
-const Badge = ({ children, variant = "primary", size = 'lg', active = false }: BadgeProps) => {
+const Badge = ({
+  children,
+  variant = "primary",
+  size = "lg",
+  font = 'base',
+  status,
+}: BadgeProps) => {
   return (
     <div
-      className={`${active && "flex items-center space-x-2 gap-2"}
-         ${variants({ variant,size})} `}
+      className={`${status && "flex items-center space-x-2 gap-2"}
+         ${variants({ variant, size, font })} `}
     >
-      {active && (
-        <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400"></div>
+      {status && (
+        <div
+          className={`h-1.5 w-1.5 animate-pulse rounded-full ${STATUS_COLOR_MAP[status]}`}
+        ></div>
       )}
       {children}
     </div>

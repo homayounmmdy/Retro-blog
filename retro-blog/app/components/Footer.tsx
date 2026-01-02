@@ -21,7 +21,7 @@ const Footer = () => {
           <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-3">
             {/* Brand section */}
             <div className="flex flex-col items-center space-y-4 md:items-start">
-              <Badge>{SiteConfig.name}</Badge>
+              <Badge font='bold'>{SiteConfig.name}</Badge>
               <p className="max-w-xs text-center font-mono text-[13px] text-gray-400 md:text-left">
                 BUILDING THE FUTURE, ONE LINE OF CODE AT A TIME.
               </p>

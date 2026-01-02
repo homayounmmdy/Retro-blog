@@ -1,9 +1,10 @@
 import { cva, VariantProps } from "class-variance-authority";
 
-export type BadgeVariants = VariantProps<typeof variants>;
-
+export type BadgeVariants = VariantProps<typeof variants> & {
+  status?: "active" | "lock" | "close";
+};
 export const variants = cva(
-  ["w-fit", "border", "font-mono", "font-bold", "uppercase", "tracking-wider"],
+  ["w-fit", "border", "font-mono", "uppercase", "tracking-wider"],
   {
     variants: {
       variant: {
@@ -21,9 +22,13 @@ export const variants = cva(
         ],
       },
       size: {
-        sm: "text-sm px-1 py-0.5",
-        md: "text-md px-2 py-1",
+        sm: "text-sm px-2 py-1",
+        md: "text-md px-2.5 py-[5px]",
         lg: "text-lg px-3 py-1.5",
+      },
+      font: {
+        base: "font-normal",
+        bold: "font-bold",
       },
     },
     defaultVariants: {
@@ -32,3 +37,12 @@ export const variants = cva(
     },
   }
 );
+
+export const STATUS_COLOR_MAP: Record<
+  NonNullable<BadgeVariants["status"]>,
+  string
+> = {
+  active: "bg-green-400",
+  lock: "bg-yellow-500",
+  close: "bg-red-500",
+};

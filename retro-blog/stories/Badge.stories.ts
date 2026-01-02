@@ -7,17 +7,25 @@ const meta = {
   args: {
     variant: "primary",
     children: "Badge",
-    active: false,
+    font: "base",
     size: "lg",
   },
   argTypes: {
     variant: {
       control: "select",
-      options : ['primary' , 'secondary']
+      options: ["primary", "secondary"],
     },
     size: {
       control: "select",
-      options : ['sm' , 'md', 'lg']
+      options: ["sm", "md", "lg"],
+    },
+    status: {
+      control: "radio",
+      options: ["active", "lock", "close"],
+    },
+    font: {
+      control: "radio",
+      options: ["base", "bold"],
     },
   },
 } satisfies Meta;
@@ -36,7 +44,18 @@ export const Secondary: Story = {
 
 export const Active: Story = {
   args: {
-    active: true,
+    status: "active",
+  },
+};
+export const Lock: Story = {
+  args: {
+    status: "lock",
+  },
+};
+
+export const FontBold: Story = {
+  args: {
+    font: "bold",
   },
 };
 

@@ -3,6 +3,7 @@
 import { MainSecData } from "@/app/config/StaticData";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Badge from "./Badge";
 
 const FeaturedSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,11 +41,9 @@ const FeaturedSlider = () => {
       {/* Content */}
       <div className="relative z-20 flex h-full flex-col justify-end p-8">
         <div className="mb-3 inline-block">
-          <div className="w-fit border border-teal-400 bg-gray-900/90 px-3 py-1 backdrop-blur-sm">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-teal-300">
-              {current.category}
-            </span>
-          </div>
+          <Badge size='md'>
+            {current.category}
+          </Badge>
         </div>
 
         <h2 className="max-w-2xl font-mono text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_0_8px_rgba(0,255,255,0.5)] sm:text-3xl">

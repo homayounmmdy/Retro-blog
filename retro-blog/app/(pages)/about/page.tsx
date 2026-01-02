@@ -83,8 +83,8 @@ const AboutPage = () => {
 
           {/* System Status Bar */}
           <div className="mt-10 flex justify-center">
-            <Badge active>
-                PROFILE LOADED
+            <Badge status="active" variant="secondary" size="sm">
+              PROFILE LOADED
             </Badge>
           </div>
 

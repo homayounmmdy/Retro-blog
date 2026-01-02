@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import Badge from "@/app/components/Badge";
+import Link from "next/link";
 
 const ContactPage = () => {
   return (
@@ -22,8 +22,11 @@ const ContactPage = () => {
           {/* Intro */}
           <div className="mb-8 font-mono text-[15px] leading-relaxed text-gray-300">
             <p>
-              This terminal channel is configured for <span className="text-teal-300">outbound messaging only</span>.  
-              The form below is a <span className="text-teal-300">static interface</span>—ideal for template integration.
+              This terminal channel is configured for{" "}
+              <span className="text-teal-300">outbound messaging only</span>.
+              The form below is a{" "}
+              <span className="text-teal-300">static interface</span>—ideal for
+              template integration.
             </p>
           </div>
 
@@ -75,28 +78,34 @@ const ContactPage = () => {
                 <span className="relative z-10">TRANSMIT (LOCKED)</span>
               </button>
               <p className="mt-2 text-xs italic text-gray-600">
-                ⚠️ Form disabled in archive mode. Integrate with your backend to enable.
+                ⚠️ Form disabled in archive mode. Integrate with your backend to
+                enable.
               </p>
             </div>
           </div>
 
           {/* Alternative Contact */}
           <div className="mt-12 rounded-lg border border-teal-400/20 bg-gray-900/70 p-4 backdrop-blur-sm">
-            <h3 className="font-mono text-sm font-bold uppercase text-teal-300">ALTERNATE CHANNELS</h3>
+            <h3 className="font-mono text-sm font-bold uppercase text-teal-300">
+              ALTERNATE CHANNELS
+            </h3>
             <ul className="mt-2 space-y-1 font-mono text-xs text-gray-400">
-              <li>• GitHub: <span className="text-teal-400">github.com/homayounmmdy</span></li>
-              <li>• Email: <span className="text-teal-400">homayoun763@gmail.com</span></li>
+              <li>
+                • GitHub:{" "}
+                <span className="text-teal-400">github.com/homayounmmdy</span>
+              </li>
+              <li>
+                • Email:{" "}
+                <span className="text-teal-400">homayoun763@gmail.com</span>
+              </li>
             </ul>
           </div>
 
           {/* System Status */}
           <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center space-x-2 rounded-sm border border-teal-400/30 bg-gray-900/80 px-4 py-2">
-              <div className="h-1.5 w-1.5 rounded-full bg-yellow-500" />
-              <span className="font-mono text-[12px] uppercase tracking-wider text-gray-300">
-                INPUT LOCKED
-              </span>
-            </div>
+            <Badge variant="secondary" size="sm" status="lock">
+              INPUT LOCKED
+            </Badge>
           </div>
 
           {/* Back to Home */}
