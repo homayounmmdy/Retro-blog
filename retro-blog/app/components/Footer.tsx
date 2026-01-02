@@ -1,8 +1,8 @@
-import React from "react";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import SiteConfig from "../config/site";
-import Link from "next/link";
+import Badge from "./Badge";
 
 const Footer = () => {
   return (
@@ -19,16 +19,9 @@ const Footer = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Main content grid */}
           <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-3">
-            
             {/* Brand section */}
             <div className="flex flex-col items-center space-y-4 md:items-start">
-              <div className="relative">
-                <div className="border border-teal-400 bg-gray-900 px-3 py-1.5">
-                  <span className="font-mono text-lg font-bold uppercase tracking-wider text-teal-300 drop-shadow-[0_0_6px_rgba(0,255,255,0.4)]">
-                    {SiteConfig.name}
-                  </span>
-                </div>
-              </div>
+              <Badge>{SiteConfig.name}</Badge>
               <p className="max-w-xs text-center font-mono text-[13px] text-gray-400 md:text-left">
                 BUILDING THE FUTURE, ONE LINE OF CODE AT A TIME.
               </p>
@@ -46,7 +39,9 @@ const Footer = () => {
                       href={nav.href}
                       className="group relative inline-flex items-center space-x-2 font-mono text-[13px] uppercase tracking-wide text-gray-400 transition-colors hover:text-teal-300"
                     >
-                      <span className="text-teal-400/70">[{String(index + 1).padStart(2, '0')}]</span>
+                      <span className="text-teal-400/70">
+                        [{String(index + 1).padStart(2, "0")}]
+                      </span>
                       <span>{nav.name}</span>
                     </a>
                   </li>
@@ -97,7 +92,9 @@ const Footer = () => {
           {/* Copyright & System Status */}
           <div className="space-y-4 text-center">
             <div className="flex flex-col items-center justify-center space-y-2 font-mono text-[11px] uppercase tracking-wider text-gray-500 sm:flex-row sm:space-x-6 sm:space-y-0">
-              <span>© {new Date().getFullYear()} / {SiteConfig.name}</span>
+              <span>
+                © {new Date().getFullYear()} / {SiteConfig.name}
+              </span>
               <span className="hidden text-teal-500/40 sm:block">|</span>
               <span>ALL RIGHTS RESERVED</span>
             </div>

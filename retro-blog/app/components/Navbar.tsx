@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { FaGithub, FaBars, FaTimes } from "react-icons/fa";
-import SiteConfig from "../config/site";
 import Link from "next/link";
+import { useState } from "react";
+import { FaBars, FaGithub, FaTimes } from "react-icons/fa";
+import SiteConfig from "../config/site";
+import Badge from "./Badge";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,15 +16,9 @@ const Navbar = () => {
       <nav className="relative border-b border-teal-400/30 bg-gray-950/90 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            
             {/* Logo - Retro Terminal Badge */}
             <a href="/" className="group relative">
-              <div className="flex items-center space-x-2 border border-teal-400 bg-gray-900 px-2.5 py-1">
-                <span className="font-mono text-lg font-bold uppercase tracking-wider text-teal-300 drop-shadow-[0_0_6px_rgba(0,255,255,0.4)]">
-                  {SiteConfig.name}
-                </span>
-                <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
-              </div>
+              <Badge active>{SiteConfig.name}</Badge>
             </a>
 
             {/* Desktop Navigation */}
@@ -35,9 +30,11 @@ const Navbar = () => {
                   className="group relative overflow-hidden px-4 py-2 font-mono text-[13px] uppercase tracking-wider text-gray-400 transition-colors hover:text-teal-300"
                 >
                   {/* Index badge */}
-                  <span className="text-teal-400/70">[{String(index + 1).padStart(2, '0')}]</span>
+                  <span className="text-teal-400/70">
+                    [{String(index + 1).padStart(2, "0")}]
+                  </span>
                   <span className="ml-2">{nav.name}</span>
-                  
+
                   {/* Animated underline on hover */}
                   <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-teal-400 transition-all duration-300 group-hover:w-full" />
                 </a>
@@ -89,7 +86,9 @@ const Navbar = () => {
               >
                 <div className="flex items-center justify-between border-l-2 border-transparent py-3 pl-4 pr-2 transition-colors group-hover:border-teal-400 group-hover:text-teal-300">
                   <span>{nav.name}</span>
-                  <span className="text-teal-400/70">[{String(index + 1).padStart(2, '0')}]</span>
+                  <span className="text-teal-400/70">
+                    [{String(index + 1).padStart(2, "0")}]
+                  </span>
                 </div>
               </Link>
             ))}
