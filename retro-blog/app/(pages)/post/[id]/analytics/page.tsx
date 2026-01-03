@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useEffect, useState } from 'react';
-import { Chart as ChartJS, registerables } from 'chart.js';
-import StaticData from '@/app/config/StaticData';
-import Link from 'next/link';
+import Stat from "@/app/components/Stats";
+import StaticData from "@/app/config/StaticData";
+import { Chart as ChartJS, registerables } from "chart.js";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 // Register Chart.js components
 ChartJS.register(...registerables);
@@ -29,12 +30,12 @@ const PostStaticPage = () => {
 
     // Device Breakdown Pie Chart
     if (deviceChartRef.current) {
-      const ctx1 = deviceChartRef.current.getContext('2d');
+      const ctx1 = deviceChartRef.current.getContext("2d");
       if (ctx1) {
         deviceChartInstance.current = new ChartJS(ctx1, {
-          type: 'doughnut',
+          type: "doughnut",
           data: {
-            labels: ['Desktop', 'Mobile', 'Tablet'],
+            labels: ["Desktop", "Mobile", "Tablet"],
             datasets: [
               {
                 data: [
@@ -43,11 +44,11 @@ const PostStaticPage = () => {
                   metrics.deviceBreakdown.tablet,
                 ],
                 backgroundColor: [
-                  'rgba(0, 255, 255, 0.7)',   // teal
-                  'rgba(0, 200, 200, 0.7)',
-                  'rgba(0, 150, 150, 0.7)',
+                  "rgba(0, 255, 255, 0.7)", // teal
+                  "rgba(0, 200, 200, 0.7)",
+                  "rgba(0, 150, 150, 0.7)",
                 ],
-                borderColor: 'rgba(0, 255, 255, 1)',
+                borderColor: "rgba(0, 255, 255, 1)",
                 borderWidth: 1,
               },
             ],
@@ -58,7 +59,7 @@ const PostStaticPage = () => {
             plugins: {
               legend: {
                 labels: {
-                  color: '#a0f0f0',
+                  color: "#a0f0f0",
                   font: {
                     family: '"IBM Plex Mono", monospace',
                     size: 12,
@@ -66,7 +67,7 @@ const PostStaticPage = () => {
                 },
               },
             },
-            cutout: '60%',
+            cutout: "60%",
           },
         });
       }
@@ -74,18 +75,18 @@ const PostStaticPage = () => {
 
     // Hourly Views Line Chart
     if (hourlyChartRef.current) {
-      const ctx2 = hourlyChartRef.current.getContext('2d');
+      const ctx2 = hourlyChartRef.current.getContext("2d");
       if (ctx2) {
         hourlyChartInstance.current = new ChartJS(ctx2, {
-          type: 'line',
+          type: "line",
           data: {
             labels: Array.from({ length: 24 }, (_, i) => `${i}:00`),
             datasets: [
               {
-                label: 'Views per Hour',
+                label: "Views per Hour",
                 data: metrics.hourlyViews,
-                borderColor: 'rgba(0, 255, 255, 1)',
-                backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                borderColor: "rgba(0, 255, 255, 1)",
+                backgroundColor: "rgba(0, 255, 255, 0.1)",
                 tension: 0.3,
                 fill: true,
               },
@@ -96,18 +97,18 @@ const PostStaticPage = () => {
             maintainAspectRatio: false,
             scales: {
               x: {
-                ticks: { color: '#60c0c0' },
-                grid: { color: 'rgba(0, 255, 255, 0.05)' },
+                ticks: { color: "#60c0c0" },
+                grid: { color: "rgba(0, 255, 255, 0.05)" },
               },
               y: {
-                ticks: { color: '#60c0c0' },
-                grid: { color: 'rgba(0, 255, 255, 0.05)' },
+                ticks: { color: "#60c0c0" },
+                grid: { color: "rgba(0, 255, 255, 0.05)" },
               },
             },
             plugins: {
               legend: {
                 labels: {
-                  color: '#a0f0f0',
+                  color: "#a0f0f0",
                   font: {
                     family: '"IBM Plex Mono", monospace',
                     size: 12,
@@ -151,24 +152,31 @@ const PostStaticPage = () => {
           {/* Summary Stats */}
           <div className="mb-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
             {[
-              { label: 'VIEWS', value: metrics.views.toLocaleString() },
-              { label: 'LIKES', value: metrics.likes },
-              { label: 'SHARES', value: metrics.shares },
-              { label: 'READ TIME', value: `${Math.round(metrics.avgReadTime / 60)}m` },
-              { label: 'COMPLETION', value: `${metrics.completionRate}%` },
-              { label: 'STATUS', value: 'ARCHIVED' },
+              {
+                label: "VIEWS",
+                value: metrics.views.toLocaleString(),
+                variant: "neonTeal",
+              },
+              { label: "LIKES", value: metrics.likes, variant: "amberCrt" },
+              { label: "SHARES", value: metrics.shares, variant: "violetHolo" },
+              {
+                label: "READ TIME",
+                value: `${Math.round(metrics.avgReadTime / 60)}m`,
+                variant: "matrixGreen",
+              },
+              {
+                label: "COMPLETION",
+                value: `${metrics.completionRate}%`,
+                variant: "alertRed",
+              },
+              { label: "STATUS", value: "ARCHIVED", variant: "cyberBlue" },
             ].map((stat, i) => (
-              <div
+              <Stat
                 key={i}
-                className="rounded border border-teal-400/20 bg-gray-900/70 p-3 text-center backdrop-blur-sm"
-              >
-                <div className="font-mono text-[10px] uppercase tracking-wider text-teal-400">
-                  {stat.label}
-                </div>
-                <div className="mt-1 font-mono text-lg font-bold text-teal-300">
-                  {stat.value}
-                </div>
-              </div>
+                label={stat.label}
+                value={stat.value}
+                variant={stat.variant}
+              />
             ))}
           </div>
 
@@ -198,8 +206,8 @@ const PostStaticPage = () => {
           {/* Note */}
           <div className="mt-8 rounded border border-teal-400/20 bg-gray-900/70 p-4 text-center">
             <p className="font-mono text-[12px] italic text-gray-400">
-              ⚠️ All data is static and for demonstration only.  
-              This template does not collect real analytics.
+              ⚠️ All data is static and for demonstration only. This template
+              does not collect real analytics.
             </p>
           </div>
 
