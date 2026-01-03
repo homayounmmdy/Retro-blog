@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextArea } from './text-area';
 
-import {expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta = {
   title: 'Components/TextArea',
@@ -57,6 +57,14 @@ export const Disabled: Story = {
   args: {
     disabled: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const textArea = canvas.getByRole('textbox');
+
+    expect(textArea).toBeDisabled();
+    await userEvent.type(textArea, 'Hello , World!');
+    expect(TextArea).toHaveValue('');
+  },
 };
 
 export const WithCount: Story = {
@@ -68,9 +76,28 @@ export const WithCount: Story = {
     const textArea = canvas.getByRole('textbox');
     const count = canvas.getByTestId('length');
 
-    const inputValue = "Hello World"
+    const inputValue = 'Hello World';
 
     await userEvent.type(textArea, inputValue);
     expect(count).toHaveTextContent(inputValue.length.toString());
+  },
+};
+
+export const LengthTooLong: Story = {
+  args: {
+    maxLength: 140,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const textArea = canvas.getByRole('textbox');
+    const count = canvas.getByTestId('length');
+
+    const inputValue = 'Y' + 'o'.repeat(140) + '!';
+
+    await userEvent.type(textArea, inputValue);
+    expect(count).toHaveTextContent(inputValue.length.toString());
+    expect(textArea).toHaveAttribute('aria-invalid', 'true');
+    // expect(TextArea).toHaveClass('ring-danger-500');
+    expect(count).toHaveStyle({ color: 'rgb(237,70,86)' });
   },
 };
